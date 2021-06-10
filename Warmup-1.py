@@ -248,25 +248,17 @@ def missing_char(str, n):
 # front_back('ab') → 'ba'
 
 def front_back(str):
-  if(len(str) == 1):
-    return str
-  if(len(str) == 2):
-    result = str[1] + str[0]
-    print(result)
-    return result
-  if(len(str) > 2):
-    front = str[0]
-    back = str[-1]
-    newString = ''
-    result = ''
-    for i in range(1, len(str)):
-      newString += str[i]
-      result = back + newString + front
-    print(newString)
-    print(result)
-
-front_back('code')
-front_back('a')
-front_back('ab')
+  pass
       
   
+##################################################################################################################################################################################################################
+
+# Given a string, we'll say that the front is the first 3 chars of the string. If the string length is less than 3, the front is whatever is there. Return a new string which is 3 copies of the front.
+
+
+# front3('Java') → 'JavJavJav'
+# front3('Chocolate') → 'ChoChoCho'
+# front3('abc') → 'abcabcabc'
+
+def front3():
+  front
