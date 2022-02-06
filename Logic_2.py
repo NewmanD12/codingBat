@@ -5,6 +5,10 @@
 # lucky_sum(1, 2, 13) → 3
 # lucky_sum(1, 13, 3) → 1
 
+from decimal import Rounded
+import re
+
+
 def lucky_sum(a, b, c):
   if((c == 13) and b != 13 and a != 13):
     return a + b
@@ -56,17 +60,37 @@ def no_teen_sum(a, b, c):
 # round_sum(6, 4, 4) → 10
 
 def round10(n):
-  pass
+  rounded = round(n/10)*10
+  # print(rounded)
+  return int(rounded)
 
+def round_sum(num_1, num_2, num_3):
+  num_1 = round10(num_1)
+  num_2 = round10(num_2)
+  num_3 = round10(num_3)
+  # print(num_1 + num_2 + num_3)
+  return num_1 + num_2 + num_3
 
+round_sum(10, 10, 19)
 
-def round_sum(a, b, c):
-  sum = a + b + c
-  if(sum % 10 != 0):
-    round10(n)
-  else:
-    return sum
+######################################################
 
+# Given three ints, a b c, return True if one of b or c is "close" (differing from a by at most 1),
+# while the other is "far", differing from both other values by 2 or more. Note: abs(num) computes the 
+# absolute value of a number.
+
+# close_far(1, 2, 10) → True
+# close_far(1, 2, 3) → False
+# close_far(4, 1, 3) → True
+
+def close_far(a, b, c):
+  res = False
+  if (abs(a-b) < 2 and abs(a-c) > 1 and abs(b-c) > 1) or (abs(a-c) < 2 and abs(a-b) > 1 and abs(c-b) > 1):
+    res = True
+  print(res)
+  return res
+
+close_far(1, 2, 3)
 
     
 
